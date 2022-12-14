@@ -1,17 +1,23 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 
-import { Container, PhotoInfo } from './styles';
+import { Container, OrderPrintTitle, PhotoInfo } from './styles';
 import { Header } from '../../components/Header';
 import { Photo } from '../../components/Photo';
 import { File } from '../../components/File';
 
 import { photosData } from '../../utils/photo.data';
+import { Input } from '../../components/Input';
 
 export function Receipts() {
   return (
     <Container>
-      <Header title="Comprovantes" />
+
+      <Input icon='drive-file-rename-outline' placeholder='nome do pedido' />
+      <Input icon='attach-money' placeholder='valor do pedido' />
+      <Input icon='date-range' placeholder='data do pedido' />
+
+      <OrderPrintTitle>Print do pedido</OrderPrintTitle>
 
       <Photo uri="" />
 
@@ -19,20 +25,6 @@ export function Receipts() {
         Informações da foto
       </PhotoInfo>
 
-      <FlatList
-        data={photosData}
-        keyExtractor={item => item.name}
-        renderItem={({ item }) => (
-          <File
-            data={item}
-            onShow={() => { }}
-            onDelete={() => { }}
-          />
-        )}
-        contentContainerStyle={{ paddingBottom: 100 }}
-        showsVerticalScrollIndicator={false}
-        style={{ width: '100%', padding: 24 }}
-      />
     </Container>
   );
 }

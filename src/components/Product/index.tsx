@@ -1,42 +1,16 @@
 import React from 'react';
 
-import { ButtonIcon } from '../ButtonIcon';
-import { Container, Info, Title, Quantity, Options } from './styles';
+import { Container, LeftContent, OrderDate, OrderTitle, OrderTotal } from './styles';
 
-export type ProductProps = {
-  id: string;
-  description: string;
-  quantity: number;
-  done: boolean;
-}
-
-type Props = {
-  data: ProductProps;
-}
-
-export function Product({ data }: Props) {
+export function Product() {
   return (
     <Container>
-      <Info>
-        <Title done={data.done}>
-          {data.description}
-        </Title>
+      <LeftContent>
+        <OrderTitle>dale cancun - mexicano</OrderTitle>
+        <OrderDate>pedido em 16/03/21</OrderDate>
+      </LeftContent>
 
-        <Quantity>
-          Quantidade: {data.quantity}
-        </Quantity>
-      </Info>
-
-      <Options>
-        <ButtonIcon
-          icon={data.done ? "undo" : "check"}
-        />
-
-        <ButtonIcon
-          icon="delete"
-          color="alert"
-        />
-      </Options>
+      <OrderTotal>R$ 2.131,33</OrderTotal>
     </Container>
   );
 }

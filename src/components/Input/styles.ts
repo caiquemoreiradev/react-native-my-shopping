@@ -1,29 +1,28 @@
 import styled, { css } from 'styled-components/native';
 
-type TextInputProps = {
-  size?: 'small' | 'medium' | 'large';
-}
+import { MaterialIcons } from '@expo/vector-icons'; 
 
-export const TextInput = styled.TextInput<TextInputProps>`
-  max-height: 60px;
+export const Container = styled.View`
+  
+  width: 327px;
+
+  padding: 4px 16px;
+
+  flex-direction: row;
+  align-items: center;
+
+  border-bottom-width: 1px;
+  border-bottom-color: ${({ theme }) => theme.COLORS.GRAY_DARK};
+`;
+
+export const Icon = styled(MaterialIcons)``;
+
+export const TextInput = styled.TextInput`
+
+  flex: 1;
+
   height: 60px;
-  background-color:${({ theme }) => theme.COLORS.GRAY50};
-  border-radius: 5px;
-  padding-left: 12px;
-  margin-bottom: 12px;
-
-  ${({ size }) => size === 'small' && css`
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    padding: 0;
-  `};
-
-  ${({ size }) => size === 'medium' && css`
-    flex: 1;
-  `};
-
-  ${({ size }) => size === 'large' && css`
-    width: 100%;
-  `};
+  border-radius: 8px;
+  
+  padding: 8px 16px;
 `;

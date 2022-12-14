@@ -4,6 +4,16 @@ export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
   align-items: center;
+
+  padding: 24px;
+`;
+
+export const OrderPrintTitle = styled.Text`
+  margin: 24px 0 0;
+
+  font-size: 20px;
+  color: ${({ theme }) => theme.COLORS.GRAY_DARK};
+  font-weight: bold;
 `;
 
 export const PhotoInfo = styled.Text`

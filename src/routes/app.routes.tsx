@@ -15,12 +15,12 @@ export function AppRoutes() {
   return (
     <Navigator
       screenOptions={{
-        tabBarActiveTintColor: theme.COLORS.PURPLE,
+        tabBarActiveTintColor: theme.COLORS.RED_MAIN,
         tabBarInactiveTintColor: theme.COLORS.GRAY800,
         tabBarLabelPosition: 'beside-icon',
         headerShown: false,
         tabBarStyle: {
-          height: 80,
+          height: 60,
           paddingVertical: Platform.OS === 'ios' ? 20 : 0,
         },
         tabBarLabelStyle: {
@@ -29,12 +29,12 @@ export function AppRoutes() {
       }}
     >
       <Screen
-        name="Produtos"
+        name="Home"
         component={Products}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialIcons
-              name="shopping-cart"
+              name="home"
               size={size}
               color={color}
             />
@@ -42,12 +42,12 @@ export function AppRoutes() {
         }}
       />
       <Screen
-        name="Comprovantes"
+        name="Novo pedido"
         component={Receipts}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialIcons
-              name="receipt"
+              name="add-box"
               size={size}
               color={color}
             />
@@ -55,12 +55,12 @@ export function AppRoutes() {
         }}
       />
       <Screen
-        name="Upload"
+        name="Meus pedidos"
         component={Upload}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialIcons
-              name="backup"
+              name="playlist-add-check"
               size={size}
               color={color}
             />

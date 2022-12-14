@@ -1,41 +1,35 @@
 import styled from 'styled-components/native';
 
-type TitleProps = {
-  done: boolean;
-}
-
 export const Container = styled.View`
-  background-color: ${({ theme }) => theme.COLORS.WHITE};
-  width: 100%;
-  height: 100px;
-  background-color: ${({ theme }) => theme.COLORS.GRAY50};
-  padding-left: 24px;
-  padding-right: 12px;
-  padding-top: 5px;
-  padding-bottom: 5px;
   flex-direction: row;
+
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
-  border-radius: 5px;
+
+  margin: 16px 0;
 `;
 
-export const Info = styled.View`
-  flex: 1;
+export const LeftContent = styled.View``;
+
+export const OrderTitle = styled.Text`
+  margin-bottom: 2px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  color: ${({ theme }) => theme.COLORS.GRAY_DARK};
 `;
 
-export const Title = styled.Text<TitleProps>`
-  font-size: 18px;
-  font-family: ${({ theme }) => theme.FONTS.MEDIUM};
-  text-decoration-line: ${({ done }) => done ? 'line-through' : 'none'};
+export const OrderDate = styled.Text`
+  font-size: 13px;
+
+  color: ${({ theme }) => theme.COLORS.GRAY_DARK};`;
+
+export const OrderTotal = styled.Text`
+  font-size: 16px;
+  font-weight: bold;
+
+  color: ${({ theme }) => theme.COLORS.GRAY_DARK};
 `;
 
-export const Quantity = styled.Text`
-  font-size: 14px;
-  font-family: ${({ theme }) => theme.FONTS.REGULAR};
-  color: ${({ theme }) => theme.COLORS.GRAY800}; 
-`;
 
-export const Options = styled.View`
-    height: 100%;
-    justify-content: space-around; 
-`;

@@ -1,29 +1,34 @@
 import React from 'react';
 import { ButtonIcon } from '../ButtonIcon';
 
-import { Container, Title } from './styles';
+import { Container, HeaderTitle, LeftContent, MainDescription, UserProfile, UserProfileImage, WelcomeMessage } from './styles';
 
-type Props = {
-  title: string;
-  showLogoutButton?: boolean;
+interface Props {
+  isHome?: boolean;
+  title?: string;
 }
 
-export function Header({ title, showLogoutButton = false }: Props) {
+export function Header({ isHome, title }: Props) {
   return (
-    <Container showLogoutButton={showLogoutButton}>
-      <Title>
-        {title}
-      </Title>
+    <Container isHome={isHome}>
 
-      {
-        showLogoutButton &&
-        <ButtonIcon
-          icon="logout"
-          color="alert"
-          style={{ marginTop: 20 }}
-          onPress={() => {}}
-        />
-      }
+      {isHome ? (
+        <>
+          <LeftContent>
+            <WelcomeMessage>Olá, Caique</WelcomeMessage>
+            <MainDescription>acompanhe seus gastos com delivery</MainDescription>
+          </LeftContent>
+
+          <UserProfile>
+            <UserProfileImage source={{ uri: 'https://avatars.githubusercontent.com/u/56305107?v=4' }} />
+          </UserProfile>
+        </>
+      ) : (
+        <HeaderTitle>{title}</HeaderTitle>
+      )}
+
+
+
     </Container>
   );
 }
